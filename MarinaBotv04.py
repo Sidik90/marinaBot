@@ -1,23 +1,13 @@
 import telebot
 import logging
 import os
-<<<<<<< HEAD
 from dotenv import load_dotenv
 from telebot import types
 
 logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
-
 TOKEN = os.getenv('TOKEN')
-
 bot = telebot.TeleBot(TOKEN)
-=======
-from telebot import types
-
-logging.basicConfig(level=logging.DEBUG)
-TOKEN = os.environ.get("TELEGRAM_TOKEN")
-bot = telebot.TeleBot("TOKEN")
->>>>>>> d28ed1546d56b6c78bd43cd7259b57309031e8b1
 
 # Словари вопросов для каждой темы:
 questions_gastro = {
@@ -98,12 +88,7 @@ def create_inline_keyboard(buttons, row_width=2):
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
-qbotuser@marinabot:~/marinaBot$ git pull origin main
-From https://github.com/Sidik90/marinaBot
- * branch            main       -> FETCH_HEAD
-Auto-merging MarinaBotv04.py
-CONFLICT (content): Merge conflict in MarinaBotv04.py
-Automatic merge failed; fix conflicts and then commit the result.    """
+    """
     Приветственное сообщение: отправляем фото и кнопку «Начать диагностику».
     """
     chat_id = message.chat.id
