@@ -1,10 +1,15 @@
 import telebot
 import logging
+import os
+from dotenv import load_dotenv
 from telebot import types
 
 logging.basicConfig(level=logging.DEBUG)
+load_dotenv()
 
-bot = telebot.TeleBot("")
+TOKEN = os.getenv('TOKEN')
+
+bot = telebot.TeleBot(TOKEN)
 
 # Словари вопросов для каждой темы:
 questions_gastro = {
